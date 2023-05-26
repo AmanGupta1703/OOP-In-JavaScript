@@ -27,6 +27,13 @@ class User {
 
 class Admin extends User {
 
+    constructor(username, email, title) {
+
+        super(username, email);
+        this.title = title;
+
+    }
+
     deleteUser(user) {
 
         users = users.filter(u => u.username !== user.username);
@@ -38,30 +45,12 @@ class Admin extends User {
 // instance of the class
 const userOne = new User("mario", "mario@themarioclub.co.uk");
 const userTwo = new User("luigi", "luigi@themarioclub.co.uk");
-const userThree = new Admin("ryu", "ryu@themarioclub.co.uk");
-
-console.log(userOne, userTwo);
-
-let users = [userOne, userTwo, userThree];
-
-userThree.deleteUser(userTwo);
-console.log(users);
-
-
-
-
-
-
-
-
-
-
-
-
-
+const userThree = new Admin("ryu", "ryu@themarioclub.co.uk", "black-belt-ninja");
 
 // the `new keyword`
 // 1 - it creates a new empty object `{}`
 // 2 - it bind the value of `this` to the newly created empty object
 // 3 - it calls the constructor function to `build` the object
 
+let users = [userOne, userTwo, userThree];
+console.log(userThree);
