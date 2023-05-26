@@ -4,6 +4,23 @@ class User {
         // setting up the properties
         this.username = username;
         this.email = email;
+        this.score = 1;
+    }
+
+    login() {
+        console.log(`${this.username} has logged in!`);
+        return this;
+    }
+
+    logout() {
+        console.log(`${this.username} has logged out!`);
+        return this;
+    }
+
+    inScore() {
+        this.score += 1;
+        console.log(`${this.username} has scored ${this.score}`);
+        return this;
     }
 
 }
@@ -18,3 +35,11 @@ console.log(userOne, userTwo);
 // 1 - it creates a new empty object `{}`
 // 2 - it bind the value of `this` to the newly created empty object
 // 3 - it calls the constructor function to `build` the object
+
+console.log(`USER ONE`);
+userOne.login();
+userOne.logout();
+
+// Method Chaining
+console.log(`USER TWO`);
+userTwo.login().inScore().inScore().inScore().logout();
